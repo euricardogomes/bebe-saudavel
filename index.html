@@ -152,34 +152,52 @@
     .free-word  { color: rgb(42, 168, 28); margin-right: 4px; }
     .total-value-box { text-align: center; font-size: 16px; font-weight: 600; margin: 20px 0 4px; line-height: 1.7; color: #1a1a1a; }
 
-    /* ════ DEPOIMENTOS REAIS — NOVO ════ */
+    /* ════ DEPOIMENTOS REAIS — GALERIA HORIZONTAL ════ */
     #depoimentos-reais { text-align: center; background: #fff; }
     #depoimentos-reais h3 {
       font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3;
     }
     #depoimentos-reais .dep-sub {
-      font-size: 14px; color: #555; margin-bottom: 28px; line-height: 1.5;
+      font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.5;
     }
+    .dep-galeria {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 0 20px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .dep-galeria::-webkit-scrollbar { display: none; }
     .dep-card {
       background: #f8f4ed;
       border-radius: 14px;
-      padding: 0;
-      margin: 0 auto 20px;
-      max-width: 520px;
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+      flex: 0 0 78vw;
+      max-width: 340px;
+      scroll-snap-align: center;
     }
     .dep-card img {
       width: 100%; display: block;
     }
     .dep-label {
       padding: 12px 16px;
-      font-size: 13px; font-weight: 700;
+      font-size: 12px; font-weight: 700;
       color: #1a2e1a;
       background: #eaf5e8;
       border-top: 2px solid rgb(58,200,34);
       line-height: 1.5;
     }
+    .dep-dots {
+      display: flex; justify-content: center; gap: 8px; margin: 12px 0 24px;
+    }
+    .dep-dots span {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #ccc; display: inline-block; transition: background 0.3s;
+    }
+    .dep-dots span.active { background: rgb(58,200,34); }
 
     /* ════ PROVA SOCIAL (números) ════ */
     #prova-social { text-align: center; }
@@ -339,47 +357,6 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 2B — COMO FUNCIONA (NOVO)
-     Elimina a dúvida: "pago e recebo o quê? como? quando?"
-══════════════════════════════════════════════ -->
-<section id="como-funciona" class="bg-creme">
-  <div class="container">
-
-    <h2>Como funciona? É muito simples 👇</h2>
-    <p class="cf-sub">Em menos de 2 minutos tens tudo no teu telemóvel</p>
-
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h4>Clicas em "Comprar"</h4>
-          <p>Preenches o nome, email e número M-Pesa ou e-Mola. Inseris o PIN. Pronto.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <h4>Recebes no email imediatamente</h4>
-          <p>O guia chega directamente no teu correio electrónico. Sem esperas, sem código, sem loja.</p>
-        </div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <h4>Abres no telemóvel</h4>
-          <p>Abre no Gmail ou qualquer leitor de PDF. Funciona offline, sem internet depois de guardar.</p>
-        </div>
-      </div>
-    </div>
-
-    <p style="font-size:13px; color:#555; text-align:center; margin-top: 4px;">
-      📱 Compatível com qualquer telemóvel Android ou iPhone &nbsp;|&nbsp; 💾 Guarda para sempre
-    </p>
-
-  </div>
-</section>
-
 
 <!-- ══════════════════════════════════════════════
      SECÇÃO 3 — O QUE INCLUI
@@ -489,20 +466,37 @@
     <h3>Mamãs reais. Resultados reais. 💚</h3>
     <p class="dep-sub">Estas mensagens chegaram no WhatsApp de mamãs que já usam o guia</p>
 
-    <div class="dep-card">
-      <img src="depoimento_3.png" alt="Depoimento Lucinda — Maputo">
-      <p class="dep-label">🌟 Lucinda, Maputo — "o meu filho está mais forte e feliz"</p>
+    <div class="dep-galeria" id="depGaleria">
+      <div class="dep-card">
+        <img src="depoimento_3.webp" alt="Depoimento Lucinda — Maputo">
+        <p class="dep-label">🌟 Lucinda, Maputo — "o meu filho está mais forte e feliz"</p>
+      </div>
+      <div class="dep-card">
+        <img src="depoimento_1.webp" alt="Depoimento Fátima — Nampula">
+        <p class="dep-label">🌟 Fátima, Nampula — "ele come muito melhor, está mais ativo e até ganhou peso"</p>
+      </div>
+      <div class="dep-card">
+        <img src="depoimento_2.webp" alt="Depoimento Mãe Helena">
+        <p class="dep-label">🌟 Mãe Helena — "melhor investimento que fiz" · Já recomendou a várias amigas</p>
+      </div>
     </div>
 
-    <div class="dep-card">
-      <img src="depoimento_1.png" alt="Depoimento Fátima — Nampula">
-      <p class="dep-label">🌟 Fátima, Nampula — "ele come muito melhor, está mais ativo e até ganhou peso"</p>
+    <div class="dep-dots">
+      <span class="active" id="dot0"></span>
+      <span id="dot1"></span>
+      <span id="dot2"></span>
     </div>
 
-    <div class="dep-card">
-      <img src="depoimento_2.png" alt="Depoimento Mãe Helena">
-      <p class="dep-label">🌟 Mãe Helena — "melhor investimento que fiz" · Já recomendou a várias amigas</p>
-    </div>
+    <script>
+      (function(){
+        var g = document.getElementById('depGaleria');
+        var dots = [document.getElementById('dot0'), document.getElementById('dot1'), document.getElementById('dot2')];
+        g.addEventListener('scroll', function(){
+          var idx = Math.round(g.scrollLeft / g.offsetWidth);
+          dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+        }, { passive: true });
+      })();
+    </script>
 
     <div class="btn-wrap">
       <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO O MESMO RESULTADO</a>
@@ -572,7 +566,49 @@
 
 
 <!-- ══════════════════════════════════════════════
-     SECÇÃO 8 — PREÇO / CHECKOUT
+     SECÇÃO — COMO FUNCIONA
+     Elimina a dúvida: "pago e recebo o quê? como? quando?"
+══════════════════════════════════════════════ -->
+<section id="como-funciona" class="bg-creme">
+  <div class="container">
+
+    <h2>Como funciona? É muito simples 👇</h2>
+    <p class="cf-sub">Em menos de 2 minutos tens tudo no teu telemóvel</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Clicas em "Comprar"</h4>
+          <p>Preenches o nome, email e número M-Pesa ou e-Mola. Inseris o PIN. Pronto.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Recebes no email imediatamente</h4>
+          <p>O guia chega directamente no teu correio electrónico. Sem esperas, sem código, sem loja.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Abres no telemóvel</h4>
+          <p>Abre no Gmail ou qualquer leitor de PDF. Funciona offline, sem internet depois de guardar.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color:#555; text-align:center; margin-top: 4px;">
+      📱 Compatível com qualquer telemóvel Android ou iPhone &nbsp;|&nbsp; 💾 Guarda para sempre
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECÇÃO — PREÇO / CHECKOUT
 ══════════════════════════════════════════════ -->
 <section id="preco" class="bg-dourado">
   <div class="container">
