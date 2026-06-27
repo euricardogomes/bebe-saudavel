@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>+800 Ideias e Receitas para Bebés | Moçambique</title>
 
-  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,8 +18,7 @@
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1024059546851950&ev=PageView&noscript=1"
-  /></noscript>
+  src="https://www.facebook.com/tr?id=1024059546851950&ev=PageView&noscript=1"/></noscript>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -35,11 +33,7 @@
       overflow-x: hidden;
     }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
 
     .btn {
       display: inline-block;
@@ -61,7 +55,6 @@
     }
     .btn:hover { background: #1d9e12; transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
-
     .btn-wrap { text-align: center; padding: 24px 0 12px; }
 
     section { padding: 40px 20px; }
@@ -70,27 +63,46 @@
     .bg-creme-s { background: rgb(232, 222, 193); }
     .bg-dourado { background: rgba(209, 172, 62, 0.48); }
     .bg-white   { background: #fff; }
-    .bg-dark    { background: #1a2e1a; }
+
+    /* ════ TOAST COMPRA RECENTE ════ */
+    #toast-compra {
+      position: fixed;
+      bottom: 20px;
+      left: 16px;
+      z-index: 9999;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 280px;
+      transform: translateY(120px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      border-left: 4px solid rgb(58,200,34);
+    }
+    #toast-compra.visivel {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .toast-icon { font-size: 22px; flex-shrink: 0; }
+    .toast-texto { font-size: 12px; line-height: 1.5; color: #1a1a1a; }
+    .toast-texto strong { display: block; font-size: 13px; color: #1a2e1a; }
+    .toast-tempo { font-size: 11px; color: #888; }
 
     /* ════ HERO ════ */
     #hero { text-align: center; padding: 48px 20px 36px; }
-    #hero .tagline {
-      font-size: 20px; font-weight: 700;
-      color: rgba(255, 0, 182, 0.99);
-      margin-bottom: 20px; line-height: 1.3;
-    }
-    #hero img.hero-img {
-      width: 100%; max-width: 480px;
-      display: block; margin: 0 auto 24px; border-radius: 8px;
-    }
-    #hero .tagline-em {
-      font-size: 14px; font-style: italic; font-weight: 700;
-      margin-bottom: 16px; line-height: 1.5; color: #111;
-    }
-    #hero .subtitle {
-      font-size: 14px; color: #222; font-weight: 500;
-      margin-bottom: 24px; line-height: 1.6;
-    }
+    #hero .tagline { font-size: 20px; font-weight: 700; color: rgba(255,0,182,0.99); margin-bottom: 20px; line-height: 1.3; }
+    #hero img.hero-img { width: 100%; max-width: 480px; display: block; margin: 0 auto 24px; border-radius: 8px; }
+    #hero .tagline-em { font-size: 14px; font-style: italic; font-weight: 700; margin-bottom: 16px; line-height: 1.5; color: #111; }
+    #hero .subtitle { font-size: 14px; color: #222; font-weight: 500; margin-bottom: 24px; line-height: 1.6; }
+
+    /* ════ TRUST BAR ════ */
+    .trust-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 16px auto 0; max-width: 500px; }
+    .trust-item { font-size: 12px; font-weight: 700; color: #555; display: flex; align-items: center; gap: 5px; }
+    .trust-item span { font-size: 16px; }
 
     /* ════ O QUE É ════ */
     #oque-e { text-align: center; }
@@ -101,27 +113,94 @@
     /* ════ O QUE INCLUI ════ */
     #o-que-inclui { text-align: center; }
     #o-que-inclui h2 { font-size: 20px; font-weight: 800; margin-bottom: 14px; line-height: 1.3; }
-    #o-que-inclui .desc { font-size: 14px; line-height: 1.7; text-align: left; color: #1a1a1a; margin-bottom: 12px; }
     #o-que-inclui .checklist { text-align: left; font-size: 14px; line-height: 1.9; margin-bottom: 16px; }
     #o-que-inclui img { width: 100%; max-width: 460px; display: block; margin: 20px auto; border-radius: 8px; }
 
-    /* ════ COMO FUNCIONA — NOVO ════ */
+    /* ════ BÓNUS ════ */
+    #bonus { text-align: center; }
+    #bonus .bonus-title { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: #000; margin-bottom: 10px; line-height: 1.3; }
+    #bonus .bonus-sub { font-size: 13px; color: rgba(26,26,26,0.85); margin-bottom: 28px; line-height: 1.6; }
+    .bonus-card { background: rgb(232,222,193); border-radius: 14px; padding: 22px 18px; margin: 0 0 20px; text-align: left; }
+    .bonus-card .bonus-label { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: #000; }
+    .bonus-card img { width: 100%; max-width: 320px; border-radius: 10px; display: block; margin: 0 auto 14px; }
+    .bonus-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #000; }
+    .bonus-card p { font-size: 13px; line-height: 1.6; color: #1a1a1a; margin-bottom: 12px; }
+    .bonus-price-line { font-size: 17px; font-weight: 700; margin-top: 8px; }
+    .old-price  { color: rgb(204,9,9); text-decoration: line-through; }
+    .free-label { color: rgb(242,34,73); margin-left: 6px; }
+    .free-word  { color: rgb(42,168,28); margin-right: 4px; }
+    .total-value-box { text-align: center; font-size: 16px; font-weight: 600; margin: 20px 0 4px; line-height: 1.7; color: #1a1a1a; }
+
+    /* ════ DEPOIMENTOS GALERIA HORIZONTAL ════ */
+    #depoimentos-reais { text-align: center; background: #fff; }
+    #depoimentos-reais h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+    #depoimentos-reais .dep-sub { font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.5; }
+    .dep-galeria {
+      display: flex; overflow-x: auto; gap: 16px;
+      padding: 0 20px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .dep-galeria::-webkit-scrollbar { display: none; }
+    .dep-card {
+      background: #f8f4ed; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+      flex: 0 0 78vw; max-width: 340px; scroll-snap-align: center;
+    }
+    .dep-card img { width: 100%; display: block; }
+    .dep-label {
+      padding: 12px 16px; font-size: 12px; font-weight: 700;
+      color: #1a2e1a; background: #eaf5e8;
+      border-top: 2px solid rgb(58,200,34); line-height: 1.5;
+    }
+    .dep-dots { display: flex; justify-content: center; gap: 8px; margin: 12px 0 24px; }
+    .dep-dots span { width: 8px; height: 8px; border-radius: 50%; background: #ccc; display: inline-block; transition: background 0.3s; }
+    .dep-dots span.active { background: rgb(58,200,34); }
+
+    /* ════ PROVA SOCIAL ════ */
+    #prova-social { text-align: center; }
+    #prova-social h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+    #prova-social .ps-sub { font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+    #prova-social img { width: 100%; max-width: 520px; display: block; margin: 0 auto 20px; border-radius: 8px; }
+
+    /* ════ FAQ ACCORDION ════ */
+    #faq { text-align: center; background: #fff; }
+    #faq h3 { font-size: 20px; font-weight: 800; margin-bottom: 24px; line-height: 1.3; }
+    .faq-item {
+      background: #f8f4ed; border-radius: 12px;
+      margin: 0 auto 10px; max-width: 620px;
+      text-align: left; border-left: 4px solid rgb(209,172,62);
+      overflow: hidden;
+    }
+    .faq-q {
+      font-size: 14px; font-weight: 800; color: #1a1a1a;
+      padding: 16px 20px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 10px; line-height: 1.4; user-select: none;
+    }
+    .faq-q .faq-arrow {
+      font-size: 18px; flex-shrink: 0; transition: transform 0.3s;
+      color: rgb(209,172,62);
+    }
+    .faq-item.aberto .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      font-size: 13px; line-height: 1.7; color: #444;
+      padding: 0 20px; max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.aberto .faq-a { max-height: 200px; padding: 0 20px 16px; }
+    .faq-a strong { color: #1a1a1a; }
+
+    /* ════ COMO FUNCIONA ════ */
     #como-funciona {
-      text-align: center;
-      background: #f8f4ed;
+      text-align: center; background: #f8f4ed;
       border-top: 3px solid rgb(209,172,62);
       border-bottom: 3px solid rgb(209,172,62);
     }
-    #como-funciona h2 {
-      font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3;
-    }
-    #como-funciona .cf-sub {
-      font-size: 14px; color: #555; margin-bottom: 28px; line-height: 1.5;
-    }
-    .steps-grid {
-      display: flex; flex-direction: column; gap: 16px;
-      max-width: 600px; margin: 0 auto 24px;
-    }
+    #como-funciona h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
+    #como-funciona .cf-sub { font-size: 14px; color: #555; margin-bottom: 28px; line-height: 1.5; }
+    .steps-grid { display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto 24px; }
     .step-card {
       background: #fff; border-radius: 14px;
       padding: 20px 18px; display: flex; align-items: flex-start; gap: 16px;
@@ -131,155 +210,41 @@
       width: 42px; height: 42px; border-radius: 50%;
       background: rgb(58,200,34); color: #fff;
       font-size: 18px; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .step-body h4 { font-size: 14px; font-weight: 800; margin-bottom: 4px; color: #1a1a1a; }
     .step-body p  { font-size: 13px; line-height: 1.6; color: #444; }
-
-    /* ════ BÓNUS ════ */
-    #bonus { text-align: center; }
-    #bonus .bonus-title { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: #000; margin-bottom: 10px; line-height: 1.3; }
-    #bonus .bonus-sub { font-size: 13px; color: rgba(26, 26, 26, 0.85); margin-bottom: 28px; line-height: 1.6; }
-    .bonus-card { background: rgb(232, 222, 193); border-radius: 14px; padding: 22px 18px; margin: 0 0 20px; text-align: left; }
-    .bonus-card .bonus-label { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: #000; }
-    .bonus-card img { width: 100%; max-width: 320px; border-radius: 10px; display: block; margin: 0 auto 14px; }
-    .bonus-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #000; }
-    .bonus-card p { font-size: 13px; line-height: 1.6; color: #1a1a1a; margin-bottom: 12px; }
-    .bonus-price-line { font-size: 17px; font-weight: 700; margin-top: 8px; }
-    .old-price  { color: rgb(204, 9, 9); text-decoration: line-through; }
-    .free-label { color: rgb(242, 34, 73); margin-left: 6px; }
-    .free-word  { color: rgb(42, 168, 28); margin-right: 4px; }
-    .total-value-box { text-align: center; font-size: 16px; font-weight: 600; margin: 20px 0 4px; line-height: 1.7; color: #1a1a1a; }
-
-    /* ════ DEPOIMENTOS REAIS — GALERIA HORIZONTAL ════ */
-    #depoimentos-reais { text-align: center; background: #fff; }
-    #depoimentos-reais h3 {
-      font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3;
-    }
-    #depoimentos-reais .dep-sub {
-      font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.5;
-    }
-    .dep-galeria {
-      display: flex;
-      overflow-x: auto;
-      gap: 16px;
-      padding: 0 20px 16px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .dep-galeria::-webkit-scrollbar { display: none; }
-    .dep-card {
-      background: #f8f4ed;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
-      flex: 0 0 78vw;
-      max-width: 340px;
-      scroll-snap-align: center;
-    }
-    .dep-card img {
-      width: 100%; display: block;
-    }
-    .dep-label {
-      padding: 12px 16px;
-      font-size: 12px; font-weight: 700;
-      color: #1a2e1a;
-      background: #eaf5e8;
-      border-top: 2px solid rgb(58,200,34);
-      line-height: 1.5;
-    }
-    .dep-dots {
-      display: flex; justify-content: center; gap: 8px; margin: 12px 0 24px;
-    }
-    .dep-dots span {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #ccc; display: inline-block; transition: background 0.3s;
-    }
-    .dep-dots span.active { background: rgb(58,200,34); }
-
-    /* ════ PROVA SOCIAL (números) ════ */
-    #prova-social { text-align: center; }
-    #prova-social h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
-    #prova-social .ps-sub { font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
-    #prova-social img { width: 100%; max-width: 520px; display: block; margin: 0 auto 20px; border-radius: 8px; }
 
     /* ════ PREÇO ════ */
     #preco { text-align: center; }
     #preco .launch-tag { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #000; margin-bottom: 8px; line-height: 1.2; }
     #preco .moeda-note { font-size: 14px; color: #555; margin-bottom: 24px; }
-    #preco .price-box { background: rgba(232, 222, 193, 0.55); border-radius: 16px; padding: 28px 20px; margin: 0 auto 24px; max-width: 500px; }
+    #preco .price-box { background: rgba(232,222,193,0.55); border-radius: 16px; padding: 28px 20px; margin: 0 auto 24px; max-width: 500px; }
     #preco .price-lead { font-size: 17px; font-weight: 600; color: #000; margin-bottom: 10px; }
-    #preco .price-main { font-size: 52px; font-weight: 900; color: rgba(255, 0, 27, 0.99); line-height: 1; margin-bottom: 20px; letter-spacing: -1px; }
+    #preco .price-main { font-size: 52px; font-weight: 900; color: rgba(255,0,27,0.99); line-height: 1; margin-bottom: 20px; letter-spacing: -1px; }
     #preco .summary-list { list-style: none; text-align: left; font-size: 13px; line-height: 1.9; color: #1a1a1a; }
     #preco .summary-list li { margin-bottom: 2px; }
     #preco .delivery-note { font-size: 13px; color: #333; margin-top: 16px; text-align: center; }
 
-    /* ════ GARANTIA ════ */
+    /* ════ GARANTIA MINI ════ */
+    .garantia-mini {
+      display: flex; align-items: center; gap: 12px;
+      background: #eaf5e8; border-radius: 12px;
+      border: 2px solid rgb(58,200,34);
+      padding: 14px 18px; max-width: 520px;
+      margin: 0 auto 20px; text-align: left;
+    }
+    .garantia-mini .gm-icon { font-size: 28px; flex-shrink: 0; }
+    .garantia-mini .gm-text { font-size: 13px; line-height: 1.6; color: #1a2e1a; }
+    .garantia-mini .gm-text strong { font-size: 14px; display: block; margin-bottom: 2px; }
+
+    /* ════ GARANTIA COMPLETA ════ */
     #garantia { text-align: center; }
     #garantia .garantia-inner { display: flex; gap: 20px; align-items: flex-start; max-width: 620px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
     #garantia img { width: 110px; flex-shrink: 0; }
     #garantia .garantia-text { flex: 1; min-width: 220px; text-align: left; }
     #garantia h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; margin-bottom: 12px; line-height: 1.3; color: #000; }
     #garantia p { font-size: 13px; line-height: 1.7; color: #222; margin-bottom: 10px; }
-
-    /* ════ OBJECÇÕES FAQ — NOVO ════ */
-    #faq {
-      text-align: center;
-      background: #fff;
-    }
-    #faq h3 {
-      font-size: 20px; font-weight: 800; margin-bottom: 24px; line-height: 1.3;
-    }
-    .faq-item {
-      background: #f8f4ed;
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 0 auto 14px;
-      max-width: 620px;
-      text-align: left;
-      border-left: 4px solid rgb(209,172,62);
-    }
-    .faq-item .faq-q {
-      font-size: 14px; font-weight: 800; margin-bottom: 8px; color: #1a1a1a; line-height: 1.4;
-    }
-    .faq-item .faq-a {
-      font-size: 13px; line-height: 1.7; color: #444;
-    }
-    .faq-item .faq-a strong { color: #1a1a1a; }
-
-    /* ════ GARANTIA MINI ANTES DO BOTÃO — NOVO ════ */
-    .garantia-mini {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #eaf5e8;
-      border-radius: 12px;
-      border: 2px solid rgb(58,200,34);
-      padding: 14px 18px;
-      max-width: 520px;
-      margin: 0 auto 20px;
-      text-align: left;
-    }
-    .garantia-mini .gm-icon { font-size: 28px; flex-shrink: 0; }
-    .garantia-mini .gm-text { font-size: 13px; line-height: 1.6; color: #1a2e1a; }
-    .garantia-mini .gm-text strong { font-size: 14px; display: block; margin-bottom: 2px; }
-
-    /* ════ TRUST BAR — NOVO ════ */
-    .trust-bar {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 16px auto 0;
-      max-width: 500px;
-    }
-    .trust-item {
-      font-size: 12px; font-weight: 700; color: #555;
-      display: flex; align-items: center; gap: 5px;
-    }
-    .trust-item span { font-size: 16px; }
 
     /* ════ RESPONSIVO ════ */
     @media (min-width: 640px) {
@@ -289,7 +254,6 @@
       #oque-e h2            { font-size: 26px; }
       #oque-e p             { font-size: 15px; }
       #o-que-inclui h2      { font-size: 26px; }
-      #o-que-inclui .desc   { font-size: 15px; }
       #o-que-inclui .checklist { font-size: 15px; }
       #preco .launch-tag    { font-size: 38px; }
       #preco .price-main    { font-size: 64px; }
@@ -311,65 +275,48 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 1 — HERO
-══════════════════════════════════════════════ -->
+<!-- TOAST — COMPRA RECENTE -->
+<div id="toast-compra">
+  <span class="toast-icon">🛍️</span>
+  <div class="toast-texto">
+    <strong id="toast-nome">Euclévia Gomes</strong>
+    acabou de adquirir o guia
+    <span class="toast-tempo" id="toast-tempo">há 2 minutos</span>
+  </div>
+</div>
+
+<!-- SECÇÃO 1 — HERO -->
 <section id="hero" class="bg-creme">
   <div class="container">
-
     <p class="tagline">🤔 Já não sabe o que preparar para o seu bebé todos os dias?</p>
-
     <img class="hero-img" src="1.webp" alt="Guia +800 Ideias e Receitas para Bebés">
-
     <p class="tagline-em">TRANSFORMA AS REFEIÇÕES DO TEU BEBÉ com +800 ideias e receitas fáceis, nutritivas e organizadas por etapa.</p>
-
     <p class="subtitle">O guia completo para te ajudar a alimentar melhor o teu bebé sem stress nem improvisações.</p>
-
     <div class="btn-wrap">
       <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO QUE O MEU BEBÉ COMA MELHOR</a>
     </div>
-
     <div class="trust-bar">
       <span class="trust-item"><span>🔒</span> Compra 100% segura</span>
       <span class="trust-item"><span>📩</span> Acesso imediato</span>
       <span class="trust-item"><span>↩️</span> Garantia 7 dias</span>
     </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 2 — O QUE É
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 2 — O QUE É -->
 <section id="oque-e" class="bg-creme">
   <div class="container">
-
     <h2>O que é +800 IDEIAS E RECEITAS?</h2>
-
     <img src="2.webp" alt="Guia de receitas para bebé">
-
     <p>É um guia prático e organizado que reúne ideias de refeições, receitas fáceis e menus pensados para te ajudar a alimentar o teu bebé de forma mais saudável, variada e sem stress.</p>
-
     <p>Com opções organizadas por etapa, refeições rápidas e receitas nutritivas, este material foi criado para facilitar o dia a dia das mamãs e transformar a hora da refeição num momento mais tranquilo e feliz.</p>
-
   </div>
 </section>
 
-
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 3 — O QUE INCLUI
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 3 — O QUE INCLUI -->
 <section id="o-que-inclui" class="bg-creme">
   <div class="container">
-
     <h2>O que inclui<br>+800 IDEIAS E RECEITAS?</h2>
-
-    <p class="desc">Receberás uma coleção completa de ideias de refeições, receitas práticas, menus organizados e materiais exclusivos para te ajudar a alimentar o teu bebé de forma mais fácil, saudável e variada em cada etapa de crescimento.</p>
-
-    <p class="desc">Dentro do material encontrarás:</p>
-
     <p class="checklist">
       ✔️ Receitas nutritivas e fáceis de preparar<br>
       ✔️ Ideias de refeições organizadas por idade<br>
@@ -379,37 +326,24 @@
       ✔️ Conselhos práticos para melhorar a alimentação do teu bebé<br>
       ✔️ Materiais extra para tornar a rotina mais simples e organizada
     </p>
-
     <img src="3.webp" alt="Conteúdo do guia">
-
     <div class="btn-wrap">
       <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO +800 IDEIAS E RECEITAS</a>
     </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 4 — BÓNUS
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 4 — BÓNUS -->
 <section id="bonus" class="bg-creme-s">
   <div class="container">
-
     <h2 class="bonus-title">🎁 BÓNUS EXCLUSIVOS POR <strong>TEMPO LIMITADO</strong>!</h2>
-
-    <p class="bonus-sub">
-      Ao adquirir <strong>+800 IDEIAS E RECEITAS</strong> hoje, receberás
-      <strong>totalmente GRÁTIS estes 3 bónus exclusivos</strong> que te vão ajudar a
-      organizar melhor as refeições do teu bebé e tornar a tua rotina muito mais prática e saudável.
-    </p>
+    <p class="bonus-sub">Ao adquirir <strong>+800 IDEIAS E RECEITAS</strong> hoje, receberás <strong>totalmente GRÁTIS estes 3 bónus exclusivos</strong>.</p>
 
     <div class="bonus-card">
       <p class="bonus-label">🎁 BÓNUS 1</p>
-      <img src="4.webp" alt="Bónus 1 — Receitas Rápidas">
+      <img src="4.webp" alt="Bónus 1">
       <h4>Receitas Rápidas para Dias Corridos</h4>
-      <p>Descobre receitas fáceis, nutritivas e rápidas de preparar, ideais para mamãs com pouco tempo.<br>
-      Refeições práticas para o pequeno-almoço, almoço, jantar e snacks, pensadas para alimentar o teu bebé de forma saudável sem complicações.</p>
+      <p>Receitas fáceis, nutritivas e rápidas de preparar — ideais para mamãs com pouco tempo.</p>
       <div class="bonus-price-line">
         <span class="old-price">DE 500 MZN</span>
         <span class="free-word">&nbsp;Por </span>
@@ -419,10 +353,9 @@
 
     <div class="bonus-card">
       <p class="bonus-label">🎁 BÓNUS 2</p>
-      <img src="5.webp" alt="Bónus 2 — Menu Semanal">
+      <img src="5.webp" alt="Bónus 2">
       <h4>Menu Semanal Pronto para Imprimir</h4>
-      <p>Planeia toda a semana de forma prática e organizada com menus prontos para imprimir.<br>
-      Ideias equilibradas para pequenos-almoços, almoços, jantares e snacks, ajudando-te a poupar tempo e a evitar o stress diário.</p>
+      <p>Planeia toda a semana de forma prática com menus equilibrados prontos a usar.</p>
       <div class="bonus-price-line">
         <span class="old-price">DE 500 MZN</span>
         <span class="free-word">&nbsp;Por </span>
@@ -432,10 +365,9 @@
 
     <div class="bonus-card">
       <p class="bonus-label">🎁 BÓNUS 3</p>
-      <img src="6.webp" alt="Bónus 3 — Alimentos para Desenvolvimento">
+      <img src="6.webp" alt="Bónus 3">
       <h4>Alimentos que Ajudam no Desenvolvimento do Bebé</h4>
-      <p>Aprende quais alimentos ajudam no crescimento saudável do teu bebé em cada etapa.<br>
-      Descobre nutrientes essenciais para fortalecer o desenvolvimento cerebral, a imunidade e o bem-estar de forma natural e nutritiva.</p>
+      <p>Quais alimentos fortalecem o cérebro, a imunidade e o crescimento do teu bebé em cada etapa.</p>
       <div class="bonus-price-line">
         <span class="old-price">DE 500 MZN</span>
         <span class="free-word">&nbsp;Por </span>
@@ -444,137 +376,104 @@
     </div>
 
     <div class="total-value-box">
-      Tudo isto avaliado em mais de <s style="color:#cc0909;">1500 MZN</s><br>
+      Tudo avaliado em mais de <s style="color:#cc0909;">1500 MZN</s><br>
       totalmente <strong style="color:rgb(7,186,25);">GRÁTIS</strong> só por tempo limitado!
     </div>
 
     <div class="btn-wrap">
       <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO OS BÓNUS</a>
     </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 5 — DEPOIMENTOS REAIS (NOVO)
-     Prints reais do WhatsApp com resultado concreto
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 5 — DEPOIMENTOS REAIS (GALERIA) -->
 <section id="depoimentos-reais" class="bg-white">
   <div class="container">
-
     <h3>Mamãs reais. Resultados reais. 💚</h3>
-    <p class="dep-sub">Estas mensagens chegaram no WhatsApp de mamãs que já usam o guia</p>
+    <p class="dep-sub">Mensagens recebidas no WhatsApp de mamãs que já usam o guia</p>
+  </div>
 
-    <div class="dep-galeria" id="depGaleria">
-      <div class="dep-card">
-        <img src="depoimento.webp" alt="Depoimento Lucinda — Maputo">
-        <p class="dep-label">🌟 Lucinda, Maputo — "o meu filho está mais forte e feliz"</p>
-      </div>
-      <div class="dep-card">
-        <img src="depoimento1.webp" alt="Depoimento Fátima — Nampula">
-        <p class="dep-label">🌟 Fátima, Nampula — "ele come muito melhor, está mais ativo e até ganhou peso"</p>
-      </div>
-      <div class="dep-card">
-        <img src="depoimento2.webp" alt="Depoimento Mãe Helena">
-        <p class="dep-label">🌟 Mãe Helena — "melhor investimento que fiz" · Já recomendou a várias amigas</p>
-      </div>
+  <div class="dep-galeria" id="depGaleria">
+    <div class="dep-card">
+      <img src="depoimento_3.webp" alt="Depoimento Lucinda — Maputo">
+      <p class="dep-label">🌟 Lucinda, Maputo — "o meu filho está mais forte e feliz"</p>
     </div>
-
-    <div class="dep-dots">
-      <span class="active" id="dot0"></span>
-      <span id="dot1"></span>
-      <span id="dot2"></span>
+    <div class="dep-card">
+      <img src="depoimento_1.webp" alt="Depoimento Fátima — Nampula">
+      <p class="dep-label">🌟 Fátima, Nampula — "ele come muito melhor e até ganhou peso"</p>
     </div>
+    <div class="dep-card">
+      <img src="depoimento_2.webp" alt="Depoimento Mãe Helena">
+      <p class="dep-label">🌟 Mãe Helena — "melhor investimento que fiz" · Já recomendou a várias amigas</p>
+    </div>
+  </div>
 
-    <script>
-      (function(){
-        var g = document.getElementById('depGaleria');
-        var dots = [document.getElementById('dot0'), document.getElementById('dot1'), document.getElementById('dot2')];
-        g.addEventListener('scroll', function(){
-          var idx = Math.round(g.scrollLeft / g.offsetWidth);
-          dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
-        }, { passive: true });
-      })();
-    </script>
+  <div class="dep-dots">
+    <span class="active" id="dot0"></span>
+    <span id="dot1"></span>
+    <span id="dot2"></span>
+  </div>
 
+  <div class="container">
     <div class="btn-wrap">
       <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO O MESMO RESULTADO</a>
     </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 6 — PROVA SOCIAL (números)
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 6 — PROVA SOCIAL -->
 <section id="prova-social" class="bg-dourado">
   <div class="container">
-
     <h3>Mais de 12.000 mamãs já descarregaram este guia</h3>
     <p class="ps-sub">Mamãs que deixaram de improvisar e agora têm mais ideias, variedade e tranquilidade em cada refeição.</p>
-
     <img src="7.webp" alt="Depoimentos de mamãs">
     <img src="8.webp" alt="Resultados reais">
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 7 — FAQ / OBJECÇÕES (NOVO)
-     Elimina dúvidas antes do checkout
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 7 — FAQ ACCORDION -->
 <section id="faq" class="bg-white">
   <div class="container">
-
-    <h3>Tens dúvidas? Aqui estão as respostas 👇</h3>
+    <h3>Tens dúvidas? Clica para ver a resposta 👇</h3>
 
     <div class="faq-item">
-      <p class="faq-q">📦 O que vou receber exactamente?</p>
-      <p class="faq-a">Receberás um guia digital completo em formato PDF com <strong>mais de 800 receitas e ideias</strong>, organizadas por etapa do bebé. Receberás também os <strong>3 bónus</strong> (Receitas Rápidas, Menu Semanal e Alimentos para o Desenvolvimento) — tudo no mesmo email, imediatamente após a compra.</p>
+      <div class="faq-q">📦 O que vou receber exactamente? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Um guia digital em PDF com <strong>mais de 800 receitas e ideias</strong> + os <strong>3 bónus</strong> — tudo no mesmo email, logo após a compra.</div>
     </div>
 
     <div class="faq-item">
-      <p class="faq-q">📩 Como e quando recebo o guia?</p>
-      <p class="faq-a">Assim que o pagamento for confirmado, receberás um email com o link para descarregar tudo. <strong>Normalmente chega em menos de 2 minutos.</strong> Verifica a pasta de spam se não aparecer na caixa de entrada.</p>
+      <div class="faq-q">📩 Como e quando recebo o guia? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Imediatamente após o pagamento receberás um email com o link para descarregar. <strong>Normalmente chega em menos de 2 minutos.</strong> Verifica a pasta de spam se não aparecer.</div>
     </div>
 
     <div class="faq-item">
-      <p class="faq-q">📱 Funciona no meu telemóvel?</p>
-      <p class="faq-a">Sim. Funciona em qualquer telemóvel Android ou iPhone, tablet ou computador. Abres directamente pelo Gmail ou qualquer leitor de PDF. <strong>Podes guardar e usar offline</strong>, sem precisar de internet depois.</p>
+      <div class="faq-q">📱 Funciona no meu telemóvel? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Sim. Funciona em qualquer Android ou iPhone. Abres pelo Gmail ou qualquer leitor de PDF. <strong>Podes guardar e usar offline</strong> sem internet.</div>
     </div>
 
     <div class="faq-item">
-      <p class="faq-q">🇲🇿 Os ingredientes são fáceis de encontrar em Moçambique?</p>
-      <p class="faq-a">Sim. O guia foi pensado para a realidade moçambicana. A Lucinda, de Maputo, confirmou: <strong>"os ingredientes são fáceis de encontrar aqui em Moçambique."</strong></p>
+      <div class="faq-q">🇲🇿 Os ingredientes encontram-se em Moçambique? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Sim. A Lucinda, de Maputo, confirmou: <strong>"os ingredientes são fáceis de encontrar aqui em Moçambique."</strong></div>
     </div>
 
     <div class="faq-item">
-      <p class="faq-q">↩️ E se eu não gostar?</p>
-      <p class="faq-a">Tens <strong>7 dias de garantia total</strong>. Se por qualquer motivo não ficares satisfeita, basta enviar uma mensagem e devolves o dinheiro completo. Sem perguntas, sem complicações.</p>
+      <div class="faq-q">↩️ E se eu não gostar? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Tens <strong>7 dias de garantia total</strong>. Pedes o reembolso e devolvemos o dinheiro completo. Sem perguntas.</div>
     </div>
 
     <div class="faq-item">
-      <p class="faq-q">💳 O pagamento é seguro?</p>
-      <p class="faq-a">Sim. Pagamento via <strong>M-Pesa ou e-Mola</strong>. Confirmas apenas com o teu PIN. Os teus dados estão totalmente protegidos.</p>
+      <div class="faq-q">💳 O pagamento é seguro? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Sim. Pagas via <strong>M-Pesa ou e-Mola</strong> com o teu PIN. Os teus dados estão totalmente protegidos.</div>
     </div>
 
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO — COMO FUNCIONA
-     Elimina a dúvida: "pago e recebo o quê? como? quando?"
-══════════════════════════════════════════════ -->
-<section id="como-funciona" class="bg-creme">
+<!-- SECÇÃO 8 — COMO FUNCIONA -->
+<section id="como-funciona">
   <div class="container">
-
     <h2>Como funciona? É muito simples 👇</h2>
     <p class="cf-sub">Em menos de 2 minutos tens tudo no teu telemóvel</p>
-
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
@@ -586,62 +485,53 @@
       <div class="step-card">
         <div class="step-num">2</div>
         <div class="step-body">
-          <h4>Recebes no email imediatamente</h4>
-          <p>O guia chega directamente no teu correio electrónico. Sem esperas, sem código, sem loja.</p>
+          <h4>Recebes no email ou WhatsApp</h4>
+          <p>O guia chega directamente no teu email ou WhatsApp. Sem esperas, sem loja, sem complicações.</p>
         </div>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
         <div class="step-body">
           <h4>Abres no telemóvel</h4>
-          <p>Abre no Gmail ou qualquer leitor de PDF. Funciona offline, sem internet depois de guardar.</p>
+          <p>Abre no Gmail, WhatsApp ou qualquer leitor de PDF. Funciona offline depois de guardar.</p>
         </div>
       </div>
     </div>
-
-    <p style="font-size:13px; color:#555; text-align:center; margin-top: 4px;">
-      📱 Compatível com qualquer telemóvel Android ou iPhone &nbsp;|&nbsp; 💾 Guarda para sempre
+    <p style="font-size:13px; color:#555; text-align:center; margin-top:4px;">
+      📱 Compatível com qualquer telemóvel &nbsp;|&nbsp; 💾 Acesso para sempre
     </p>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO — PREÇO / CHECKOUT
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 9 — PREÇO -->
 <section id="preco" class="bg-dourado">
   <div class="container">
-
     <p class="launch-tag">PREÇO ESPECIAL DE LANÇAMENTO</p>
     <p class="moeda-note">(Podes pagar em Metical Moçambicano)</p>
 
     <div class="price-box">
       <p class="price-lead">Leva TUDO isto por apenas</p>
       <p class="price-main">197 MZN</p>
-
       <ul class="summary-list">
         <li>✅ Mais de 800 ideias e receitas para bebés</li>
         <li>✅ Refeições organizadas por etapa e idade</li>
         <li>✅ Pequenos-almoços, almoços, jantares e snacks saudáveis</li>
         <li>✅ Receitas rápidas e fáceis para o dia a dia</li>
-        <li>✅ Menus práticos para te ajudar a organizar a semana</li>
+        <li>✅ Menus práticos para organizar a semana</li>
         <li>✅ Opções nutritivas para bebés seletivos</li>
         <li>🎁 BÓNUS 1: Receitas Rápidas para Dias Corridos</li>
         <li>🎁 BÓNUS 2: Menu Semanal Pronto para Imprimir</li>
         <li>🎁 BÓNUS 3: Alimentos que Ajudam no Desenvolvimento do Bebé</li>
         <li>🔒 Acesso imediato e 100% digital</li>
-        <li>📱 Compatível com telemóvel, tablet e computador</li>
-        <li>⏳ Oferta limitada</li>
+        <li>📱 Funciona em qualquer telemóvel</li>
       </ul>
     </div>
 
-    <!-- GARANTIA MINI — aparece ANTES do botão de compra -->
     <div class="garantia-mini">
       <span class="gm-icon">🛡️</span>
       <div class="gm-text">
         <strong>Garantia de 7 dias sem risco</strong>
-        Não gostaste? Devolves o dinheiro. Sem perguntas, sem complicações. A decisão é tua.
+        Não gostaste? Devolves o dinheiro. Sem perguntas, sem complicações.
       </div>
     </div>
 
@@ -651,36 +541,90 @@
       </a>
     </div>
 
-    <p class="delivery-note">📩 Entrega imediata por correio electrónico</p>
+    <p class="delivery-note">📩 Entrega imediata por email ou WhatsApp</p>
 
-    <div class="trust-bar" style="margin-top: 16px;">
+    <div class="trust-bar" style="margin-top:16px;">
       <span class="trust-item"><span>🔒</span> Pagamento seguro</span>
       <span class="trust-item"><span>📱</span> M-Pesa &amp; e-Mola</span>
       <span class="trust-item"><span>↩️</span> Garantia 7 dias</span>
     </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     SECÇÃO 9 — GARANTIA (completa)
-══════════════════════════════════════════════ -->
+<!-- SECÇÃO 10 — GARANTIA COMPLETA -->
 <section id="garantia" class="bg-creme">
   <div class="container">
-
     <div class="garantia-inner">
       <img src="garantia-YrDNbk5xkXtbRqee_1.png" alt="Garantia de 7 dias">
       <div class="garantia-text">
         <h2>Garantia Incondicional de 7 Dias</h2>
-        <p><strong>Ainda tens dúvidas? Não te preocupes, a tua compra está 100% protegida.</strong></p>
-        <p>Se por qualquer motivo o conteúdo que recebes não cumprir com o prometido, tens até <strong>7 dias</strong> para solicitar o reembolso <strong>completo</strong>, sem perguntas nem complicações.</p>
-        <p>Lembra-te que o teu acesso é <strong>para sempre</strong>.</p>
+        <p><strong>A tua compra está 100% protegida.</strong></p>
+        <p>Se por qualquer motivo não ficares satisfeita, tens até <strong>7 dias</strong> para pedir o reembolso <strong>completo</strong>, sem perguntas nem complicações.</p>
+        <p>O teu acesso é <strong>para sempre</strong>.</p>
       </div>
     </div>
-
   </div>
 </section>
+
+<script>
+  // ── FAQ ACCORDION ──
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.parentElement;
+      var jaAberto = item.classList.contains('aberto');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('aberto'); });
+      if (!jaAberto) item.classList.add('aberto');
+    });
+  });
+
+  // ── GALERIA DOTS ──
+  (function(){
+    var g = document.getElementById('depGaleria');
+    var dots = [document.getElementById('dot0'), document.getElementById('dot1'), document.getElementById('dot2')];
+    if (!g) return;
+    g.addEventListener('scroll', function(){
+      var idx = Math.round(g.scrollLeft / (g.scrollWidth / dots.length));
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+    }, { passive: true });
+  })();
+
+  // ── TOAST COMPRAS RECENTES ──
+  (function(){
+    var nomes = [
+      ['Euclévia Gomes', 'há 1 minuto'],
+      ['Anita Machava', 'há 3 minutos'],
+      ['Sónia Cossa', 'há 5 minutos'],
+      ['Felicidade Sitoe', 'há 8 minutos'],
+      ['Gracinda Bila', 'há 12 minutos'],
+      ['Deolinda Tembe', 'há 15 minutos'],
+      ['Lurdes Nhantumbo', 'há 2 minutos'],
+      ['Palmira Fumo', 'há 7 minutos'],
+      ['Inocência Mathe', 'há 20 minutos'],
+      ['Beatriz Cumbe', 'há 4 minutos']
+    ];
+    var toast = document.getElementById('toast-compra');
+    var toastNome = document.getElementById('toast-nome');
+    var toastTempo = document.getElementById('toast-tempo');
+    var idx = 0;
+
+    function mostrar() {
+      var entrada = nomes[idx % nomes.length];
+      toastNome.textContent = entrada[0];
+      toastTempo.textContent = entrada[1];
+      toast.classList.add('visivel');
+      setTimeout(function() {
+        toast.classList.remove('visivel');
+      }, 4000);
+      idx++;
+    }
+
+    // Primeira aparição depois de 5 segundos, depois a cada 18 segundos
+    setTimeout(function() {
+      mostrar();
+      setInterval(mostrar, 18000);
+    }, 5000);
+  })();
+</script>
 
 </body>
 </html>
