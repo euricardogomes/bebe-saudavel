@@ -105,44 +105,13 @@
     .trust-item span { font-size: 16px; }
 
     /* ════ VSL ════ */
-    #vsl {
-      background: #0d1a0d;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    #vsl .vsl-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    #vsl .vsl-titulo {
-      font-size: clamp(16px, 4.5vw, 22px);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.35;
-      margin-bottom: 22px;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #vsl .vsl-titulo em {
-      font-style: normal;
-      color: rgb(58, 200, 34);
-    }
-    #vsl .vsl-player-wrap {
+    /* ════ VSL PLAYER (primeira dobra) ════ */
+    .vsl-player-wrap {
       max-width: 720px;
       margin: 0 auto 24px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.6);
-    }
-    #vsl .vsl-cta-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 10px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.5);
     }
 
     /* ════ O QUE É ════ */
@@ -326,32 +295,13 @@
   </div>
 </div>
 
-<!-- SECÇÃO 1 — HERO -->
+<!-- SECÇÃO 1 — HERO + VSL (primeira dobra) -->
 <section id="hero" class="bg-creme">
   <div class="container">
     <p class="tagline">🤔 Já não sabe o que preparar para o seu bebé todos os dias?</p>
-    <img class="hero-img" src="1.webp" alt="Guia +800 Ideias e Receitas para Bebés">
     <p class="tagline-em">TRANSFORMA AS REFEIÇÕES DO TEU BEBÉ com +800 ideias e receitas fáceis, nutritivas e organizadas por etapa.</p>
-    <p class="subtitle">O guia completo para te ajudar a alimentar melhor o teu bebé sem stress nem improvisações.</p>
-    <div class="btn-wrap">
-      <a href="https://checkout.escalepay.com/4427451" class="btn">QUERO QUE O MEU BEBÉ COMA MELHOR</a>
-    </div>
-    <div class="trust-bar">
-      <span class="trust-item"><span>🔒</span> Compra 100% segura</span>
-      <span class="trust-item"><span>📩</span> Acesso imediato</span>
-      <span class="trust-item"><span>↩️</span> Garantia 7 dias</span>
-    </div>
-  </div>
-</section>
 
-<!-- SECÇÃO VSL — VÍDEO DE VENDAS -->
-<section id="vsl">
-  <div class="container">
-    <p class="vsl-label">👇 Assiste antes de continuar</p>
-    <h2 class="vsl-titulo">
-      Vê como mamãs moçambicanas transformaram<br>
-      <em>a alimentação dos seus bebés com este guia</em>
-    </h2>
+    <!-- VSL — primeira dobra -->
     <div class="vsl-player-wrap">
       <vturb-smartplayer id="vid-6a554b2b630e44b3856d24c3" style="display: block; margin: 0 auto; width: 100%;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
       <script type="text/javascript">
@@ -361,12 +311,15 @@
         document.head.appendChild(s);
       </script>
     </div>
-    <div class="btn-wrap" style="padding-top: 8px;">
-      <a href="https://checkout.escalepay.com/4427451" class="btn" style="font-size:17px; padding:18px 44px;">
-        QUERO ACESSO IMEDIATO — 297 MZN
-      </a>
+
+    <div class="btn-wrap">
+      <a href="https://checkout.escalepay.com/4427451" class="btn" style="font-size:17px; padding:18px 44px;">QUERO QUE O MEU BEBÉ COMA MELHOR</a>
     </div>
-    <p class="vsl-cta-note">🔒 Pagamento seguro via M-Pesa ou e-Mola &nbsp;·&nbsp; 📩 Acesso imediato &nbsp;·&nbsp; 🛡️ Garantia 7 dias</p>
+    <div class="trust-bar">
+      <span class="trust-item"><span>🔒</span> Compra 100% segura</span>
+      <span class="trust-item"><span>📩</span> Acesso imediato</span>
+      <span class="trust-item"><span>↩️</span> Garantia 7 dias</span>
+    </div>
   </div>
 </section>
 
